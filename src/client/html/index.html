@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="blood.png" content="image/png">
+
+    <title>io.game</title>
+</head>
+<body>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <div id="play-menu" class="hidden">
+        <h1> IO.GAME</h1>
+        <p>
+            Stay alive and shoot other players!
+            <br />
+            Use mouse to move.
+        </p>
+        <p>
+            See the source code on <a href="https://github.com/kremenevskiy/io.game" target="_blank">Github</a>
+            <br />
+            Created by <a href="https://github.com/kremenevskiy" target="_blank">Vladislav Kremenevskiy</a>
+        </p>
+
+        <input type="text" id="username-input" placeholder="Username" autocomplete="off">
+        <button id="play-button">PLAY</button>
+    </div>
+    <div id="leaderboard" class="hidden">
+        <table>
+            <caption>Leaderboard</caption>
+            <tr>
+                <th class="leaderboard_info"></th>
+                <th class="leaderboard_info">Username</th>
+                <th class="leaderboard_info">Score</th>
+            </tr>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+        </table>
+    </div>
+    <div id="disconnect-modal" class="hidden">
+        <div>
+            <h2>Disconnected from Server</h2>
+            <hr />
+            <button id="reconnect-button">RECONNECT</button>
+        </div>
+    </div>
+    <div id="no-connect-modal" class="hidden">
+        <div>
+            <h2>Unable to connect to server :(</h2>
+            <hr />
+            <button id="no-connect-button">RECONNECT</button>
+        </div>
+    </div>
+    <div id="dead-menu" class="hidden">
+        <div>
+            <h2>Ooops... You dead :(</h2>
+            <hr />
+            <button id="dead-button">Go main menu</button>
+        </div>
+    </div>
+    <div id="upgrade-menu" class="hidden disabled" >
+        <div>
+            <p>
+                <button id="dmgUp-btn" onClick="">DMG++</button>
+                <label id="dmgUp-lbl">1</label><label> lvl</label>
+            </p>
+            <p>
+                <button id="dmgDec-btn">DMG--</button>
+                <label id="dmgDec-lbl">1</label><label> lvl</label>
+            </p>
+
+            <p>
+                <button id="health-btn">Health++</button>
+                <label id="health-lbl">1</label><label> lvl</label>
+
+            </p>
+
+            <p>
+                <button id="regen-btn">Regen++</button>
+                <label id="regen-lbl">1</label><label> lvl</label>
+            </p>
+
+            <p>
+                <button id="range-btn">Range++</button>
+                <label id="range-lbl">1</label><label> lvl</label>
+            </p>
+
+            <p>
+                <button id="speed-btn">Speed++</button>
+                <label id="speed-lbl">1</label><label> lvl</label>
+            </p>
+            <p>
+                <button id="reload-btn">Reload++</button>
+                <label id="reload-lbl">1</label><label> lvl</label>
+            </p>
+        </div>
+    </div>
+
+
+    <canvas id="game-canvas" class="hidden"></canvas>
+</body>
+</html>
